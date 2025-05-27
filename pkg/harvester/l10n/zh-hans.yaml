@@ -1,0 +1,1743 @@
+generic:
+  tip: 提示
+  resourceExternalLinkTips: '外部链接'
+  namespace: 命名空间
+  notReady: 未就绪
+  labels: 标签
+  inProgress: 进行中
+  basic: 基本信息
+  loading: 加载中...
+
+unsupported:
+  serverVersion: '当前版本: <code>{serverVersion}</code>'
+  description: Harvester ui 仅支持 Harvester 集群版本大于或等于 1.3.0。
+  learnMore: 从 <a target="_blank" href="https://harvesterhci.io/" rel="noopener noreferrer nofollow">Harvester 网站</a>了解有关 Harvester 的更多信息 or read the <a target="_blank" href="https://docs.harvesterhci.io/" rel="noopener noreferrer nofollow">Harvester Docs</a>
+
+nav:
+  group:
+    networks: 网络
+    backupAndSnapshot: 备份和快照
+    Monitoring: 监控
+    Logging: 日志
+    'Monitoring and Logging': 监控和日志
+
+resourceTable:
+  groupBy:
+    device: 按设备分组
+
+validation:
+  arrayCountRequired: "至少 {count} {key} 是必填的, 且 {key} 不能为空。"
+
+members:
+  clusterMemebership: 集群成员
+  projectMembership: 项目成员
+
+asyncButton:
+  restart:
+    action: 保存并重新启动
+    success: 已重新启动
+    waiting: 重新启动中&hellip;
+
+dialog:
+  confirmExecution:
+    title: 你确定吗？
+    andOthers: |-
+      {count, plural,
+      =0 {}
+      =1 { and <b>one other </b>}
+      other { and <b>{count} other </b>}
+      }
+    protip: "提示：按住 {alternateLabel} 键的同时单击删除，以绕过此确认。"
+    stop:
+      message: "您确定要继续停止 {type} {names}?"
+    pause:
+      message: "您确定要继续暂停 {type} {names}?"
+
+harvester:
+  branding:
+    logos:
+      tip: '上传一个 logo 以替换顶层导航标题中的 Harvester logo。图片的高度应为 21 像素，，最大宽度为 200 像素。最大文件大小为 20KB。支持的格式：JPEG、PNG、SVG。'
+    favicon:
+      tip: '上传一个网站图标来替换浏览器选项卡中的 Harvester 图标。最大文件大小为 20KB。'
+  productLabel: 'Harvester'
+  modal:
+    backup:
+      success: '备份 { backUpName } 已启动。'
+      addBackup: 添加备份
+    quota:
+      editVMQuota: 编辑 VM 配额
+      editQuota: 编辑配额
+      bannerMessage: 设置为空字符串或 0 以删除快照总大小配额。
+    restore:
+      success: 'Restore { name } 创建成功。'
+      title: 备份和恢复
+      selectBackup: 选择备份
+      message:
+        backup: 请选择需要恢复的备份。
+    createTemplate:
+      title: '生成 Template'
+      name: '名称'
+      description: '描述'
+      message:
+        tip: 请输入 Template 名称！
+        success: '模板 { templateName } 创建成功。'
+        failed: '生成模板失败！'
+    schedule:
+      title: 创建 Schedule
+      message:
+        tip: 请输入 schedule 名称！
+        success: 'Schedule { name } 创建成功'
+        failed: 'schedule 创建失败 ！'
+    cloneVM:
+      title: 克隆虚拟机
+      name: 新虚拟机名称
+      type: 克隆卷数据
+      action:
+        create: 创建
+        clone: 克隆
+      message:
+        tip: 请输入虚拟机名称！
+        success: '虚拟机 { name } 克隆成功'
+        failed: '克隆成功虚拟机失败！'
+    downloadImage:
+      title: 下载 Image
+      banner: '此操作需要一段时间，具体取决于 image 大小 ({ size })，请耐心等待。'
+      startMessage : '转换完成后，下载过程将自动启动。'
+      download: 下载
+    exportImage:
+      title: 导出 Image
+      name: 名称
+      namespace: Namespace
+      message:
+        success: 'Image { name } 创建成功'
+    migration:
+      failedMessage: 最近一次迁移失败！
+      title: Migration
+      fields:
+        nodeName:
+          label: 目标节点
+          placeholder: 选择目标节点
+    ejectCDROM:
+      title: 弹出 CD-ROM
+      warnTip: 弹出卷将重新启动虚拟机。
+      operationTip: '选择要删除的卷：'
+      delete: 删除
+    bundle:
+      title: 生成支持的 Bundle
+      url: Issue URL
+      description: 描述
+      requiredDesc: 描述是必填项！
+      titleDescription: 在 Harvester 中收集与系统有关的日志，以帮助排除故障和提供支持。
+    hotplug:
+      success: '卷 { diskName } 已经挂载到虚拟机 { vm }.'
+      title: 添加卷
+    hotunplug:
+      success: '卷 { name } 已成功分离。'
+    snapshot:
+      title: 创建快照
+      name: 名称
+      message:
+        success: '创建快照 { name } 成功。'
+    volumeClone:
+      title: 克隆卷
+      name: 名称
+      message:
+        success: '新的卷 { name } 克隆成功。'
+    restoreSnapshot:
+      title: 恢复快照
+      name: '新的卷 名称'
+      success: '新的卷 { name } 恢复成功'
+    vmSnapshot:
+      title: 创建 Virtual Machine 快照
+      name: 名称
+      success: '创建虚拟机快照 { name } 成功。'
+    restart:
+      title: 重启虚拟机
+      tip: 重新启动虚拟机以使配置更改生效。
+      cancel: 保存
+  notification:
+    title:
+      succeed: Succeed
+      info: Info
+      warning: Warning
+      error: Error
+  action:
+    createVM: 创建虚拟机
+    start: 启动
+    restart: 重新启动
+    softreboot: 软重启
+    stop: 停止
+    pause: 暂停
+    deepClone: 克隆
+    shallowClone: 克隆 Template
+    unpause: 取消暂停
+    encryptImage: 加密 Image
+    decryptImage: 解密 Image
+    ejectCDROM: 弹出 CD-ROM
+    editVMQuota: 编辑虚拟机配额
+    launchFormTemplate: 从模板启动实例
+    modifyTemplate: 修改模板（创建新版本）
+    setDefaultVersion: 设置默认版本
+    addTemplateVersion: 添加模板版本
+    backup: 备份
+    createSchedule: 创建 Schedule
+    restore: 恢复
+    restoreNewVM: 恢复新的
+    resumeSchedule: 恢复
+    suspendSchedule: 暂停
+    restoreExistingVM: 更换现有
+    migrate: 迁移
+    abortMigration: 取消迁移
+    createTemplate: 生成 Template
+    enableMaintenance: 启用维护模式
+    disableMaintenance: 禁用维护模式
+    enableCPUManager: 启用 CPU 管理器
+    disableCPUManager: 禁用 CPU 管理器
+    cordon: Cordon
+    uncordon: Uncordon
+    addHotplug: 添加卷
+    exportImage: 导出 Image
+    viewlogs: 查看日志
+    cancelExpand: 取消展开
+    snapshot: 创建快照
+    pvcClone: 克隆卷
+    vmSnapshot: 创建虚拟机快照
+    shutdown: 关机
+    powerOn: 开机
+    reboot: 重启
+    forceStop: 强制停止
+  formatters:
+    hardwareResourceGauge:
+      allocated: Allocated
+      consumption: "{useful} of {total} {units} {suffix}"
+      cores: CPU
+      pods: Pods
+      ram: Memory
+      used: Used
+      reserved: Reserved
+      units:
+        cores: |-
+          {count, plural,
+          =1 {core}
+          other {cores}}
+  tableHeaders:
+    imageEncryption: 加密
+    size: 大小
+    virtualSize: 虚拟大小
+    progress: 进展情况
+    message: 消息
+    phase: 阶段
+    attachedVM: 已附加的虚拟机
+    cpuManager: CPU 管理器
+    fingerprint: 指纹
+    value: Value
+    actions: 操作
+    readyToUse: 准备就绪
+    backupTarget: 备份目标
+    targetVm: 目标虚拟机
+    cronExpression: Cron 表达式
+    retain: Retain
+    scheduleType: Type
+    maxFailure: Max Failure
+    sourceVm: 源虚拟机
+    vmSchedule: 虚拟机 Schedule
+    hostIp: 主机 IP
+    vm:
+      ipAddress: IP 地址
+      node: 节点
+      defaultVersion: 默认版本
+    network:
+      type: Type
+      vlan: VLAN ID
+    snapshotTargetVolume: Original 卷
+    volumeSnapshotCounts: 快照数量
+    networkState: 网络状态
+    totalSnapshotQuota: 快照总配额
+    storageClass: Storage Class
+    restore: 恢复
+  tab:
+    volume: 卷
+    network: 网络
+    advanced: 高级选项
+    accessCredentials: 访问凭证
+    pciDevices: PCI 设备
+    vGpuDevices: vGPU 设备
+    usbDevices: USB 设备
+    vmScheduling: 虚拟机调度
+    quotas: 配额
+    snapshots: 快照
+    instanceLabel: 实例 Labels
+  fields:
+    version: 版本
+    name: 名称
+    type: 类型
+    image: Image
+    size: 大小
+    volume: 卷
+    network: 网络
+    model: Model
+    macAddress: MAC 地址
+    port: 端口
+    protocol: 协议
+    remove: 删除
+    PhysicalNic: 物理网卡
+    cpu: CPU
+    memory: Memory
+    virtualName: 虚拟机名称
+    promiscuous: Promiscuous
+    ipv4Address: IPv4 地址
+    filterLabels: 过滤器标签
+    filterSchedule: 过滤器 schedule
+    storageClass: 存储类
+    dockerImage: Docker image
+  pci:
+    available: 可用设备
+    compatibleNodes: 兼容节点
+    impossibleSelection: '没有包含所有选定设备的主机。'
+    howToUseDevice: '请通过下表在需接入此虚拟机的每个设备上启用 PCI 直通功能。'
+    deviceInTheSameHost: '只能选择同一主机上的设备。'
+    oldFormatDevices:
+      help: |-
+        <p>
+          以下 PCI 设备使用旧的命名约定，需要在 YAML 文件中进行更新：
+        </p>
+        <ul>
+          {oldFormatDevicesHTML}
+        </ul>
+        <p>
+          请使用以下说明更新虚拟机：
+        </p>
+        <ol>
+          <li>停止虚拟机运行，编辑虚拟机 YAML 配置文件，移除 <Code>hostDevices</Code> 配置段，并将修改保存至 YAML 文件。</li>
+          <li>编辑虚拟机配置，从可用 PCI 设备列表中选取已启用直通的设备进行添加，保存配置并启动虚拟机</li>
+        </ol>
+    showCompatibility: 显示设备兼容性矩阵
+    hideCompatibility: 隐藏设备兼容性矩阵
+    claimError: 在 {name} 上启用硬件直通失败
+    unclaimError: 在 {name} 上禁用硬件直通失败
+    cantUnclaim: 无法禁用该设备的直通功能；当前设备已被其他用户实例占用。
+    enableGroup: 启用组
+    disableGroup: 禁用组
+    labelRequired: "‌此规则禁止手动修改：其用于确保为该虚拟机分配的 PCI 设备在宿主机上真实存在且可直通。"
+    goSetting:
+      prefix: pcidevices-controller 插件未启用，请单击
+      middle: 这里
+      suffix: 以启用插件，成功管理 PCI 设备。
+    noPCIPermission: 请联系系统管理员，首先启用 PCI 设备。
+    enablePassthroughWarning: 请勿分配宿主机专属PCI设备（如管理网卡、VLAN网卡）。错误分配可能导致集群损坏（含节点不可恢复故障）。
+
+  devices:
+    matrixHostName: 主机名称
+    matrixDeviceClaimName: 设备声明名称
+
+  generic:
+    close: 关闭
+    open: 打开
+    showMore: 显示更多
+    hideMore: 收起更多
+    memory: Memory
+    cpu: CPU
+    storage: Storage
+    noFileChosen: 未选择文件
+    noSchema: "无法找到自定义资源定义：{schema}。"
+
+  validation:
+    custom:
+      tooLongName: '"名称" 不能超过 {max} 个字符。'
+    generic:
+      hasDelete: '{type} "{name}" 已经被删除。'
+      maxLength: '"{key}" 不能超过 {max} 个字符。'
+      tabError:  '{prefix}: {message}'
+      maximumSize: "超出最大尺寸限制 {max}!"
+      regex: '无效的 {lowerType} "{name}": {upperType} 必须匹配正则表达式 "{regex}"'
+    vm:
+      name: '必须填写名称！'
+      memory: '必须填写 "Memory"！'
+      duplicatedName: '重复的 {type} 名称："{name}"'
+      network:
+        macFormat: 'MAC 地址格式无效。'
+        upperType: Network name
+        lowerType: network name
+      volume:
+        upperType: Volume name
+        lowerType: volume name
+        needImageOrExisting: '必须存在至少一个镜像卷或现有根磁盘卷！'
+    image:
+      ruleTip: '您输入的 URL 后缀扩展名不受支持。只接受以 .img, .iso, .qcow, .qcow2, .raw 结尾的 image 文件。'
+      ruleFileTip: '您选择的文件后缀扩展名不受支持。只接受以 .img, .iso, .qcow, .qcow2, .raw 结尾的 image 文件。'
+    hash:
+      sha512: 'SHA512 校验和无效。'
+
+  dashboard:
+    label: Dashboard
+    header: "Harvester 集群: {cluster}"
+    hardwareResourceGauge:
+      cpu: CPU
+      memory: Memory
+      storage: Storage
+      allocated: Allocated
+    sections:
+      events:
+        label: Events
+      vmMetrics:
+        label: 虚拟机指标
+
+    version: 版本
+  host:
+    console: 控制台
+    label: 主机
+    inconsistentIP: "主机IP地址不一致，当前IP：{ currentIP }，初始IP：{ initIP }"
+    noConsoleUrl: '未指定控制台 URL'
+    promote:
+      none: ' '
+      running: Promoting
+      failed: Promote failed
+      unknown: Promote halted
+      promoteRestart: Restarting
+      promoteSucceed: Promote completed
+    tabs:
+      network: 网络
+      overview: 概述
+      basics: 基本信息
+      instance: 虚拟机
+      monitor: 控数据
+      storage: 存储
+      labels: 标签
+      ksmtuned: Ksmtuned
+      seeder: Out-of-band 访问
+    detail:
+      kvm:
+        disableMessage: 已禁用或不支持基于硬件的虚拟化。在创建任何虚拟机之前，必须启用基于硬件的虚拟化。
+      title:
+        network: 网络配置
+      hostIP: 主机 IP
+      role: 角色
+      os: 操作系统
+      create: 创建时间
+      update: 最后更新时间
+      customName: 自定义名称
+      consoleUrl: 控制台 URL
+      more: 更多信息
+      uuid: UUID
+      containerRuntime: 容器运行时间
+      kernel: 内核
+      management: 管理节点
+      compute: 计算节点
+      storage: 存储
+      nic: 物理网卡
+      notRecommended: '不推荐'
+      networkType: 类型
+      manufacturer: 制造商
+      serialNumber: 序列号
+      model: Model
+      etcd: Witness 节点
+      cpuManager: CPU 管理器
+    enableMaintenance:
+      title: 启用维护模式
+      protip: 该操作会将此节点上的所有虚拟机迁移到其他节点。
+      shutDownVMs: 选择<b>强制</b>选项以关闭无法进行实时迁移的虚拟机。
+      force: 强制
+    cordon:
+      title: Cordon
+      protip: 此操作会将节点 { node } 标记为不可调度。
+    ksmtuned:
+      run: 运行策略
+      configure: 配置
+      mode: 模式
+      modeLink: 模式 <a href="{url}" target="_blank"><i class="icon icon-info" /></a>
+      thresCoef: 阈值系数
+      enableMergeNodes: 启用跨节点合并
+      enable: 启用
+      disable: 禁用
+      ksmStatus: KSM 状态
+      modeOption:
+        standard: 标准
+        high: 高性能
+        customized: 自定义
+      parameters:
+        title: Ksmtuned 参数
+        boost: Boost
+        decay: Decay
+        sleepMsec: 休眠时间 (毫秒)
+        minPages: 最少页数
+        maxPages: 最大页数
+        description:
+          boost: 如果可用内存小于阈值系数，每次扫描的页数都会递增。
+          decay: 如果可用内存大于阈值系数，则每次都会减少扫描页数。
+          sleepMsec: 两次扫描之间的时间间隔（最小值为 10 毫秒），计算公式为（睡眠毫秒 * 16 * 1024 * 1024/总内存）。
+          minPages: 每次扫描的最少页数，也是首次运行的配置。
+          maxPages: 每次扫描的最大页数。
+      statistics:
+        title: 统计 <a href="https://www.kernel.org/doc/html/latest/admin-guide/mm/ksm.html#ksm-daemon-sysfs-interface" target="_blank"><i class="icon icon-info" /></a>
+        sharing: 共享中
+        shared: 已共享
+        unshared: 未共享
+        volatile: Volatile
+        fullScans: 全面扫描
+        stableNodeChains: Stable Node Chains
+        stableNodeDups: Stable Node Dups
+    disk:
+      add: 添加磁盘
+      path:
+        label: 路径
+      storageReserved:
+        label: 存储预留
+      allowScheduling:
+        label: 调度
+        tooltip: 磁盘 {name} ({path}) 调度已禁用
+      evictionRequested:
+        label: Eviction Requested
+      forceFormatted:
+        label: 强制格式化
+        toolTip: 强制格式化会清理磁盘数据，请确保备份所有可用数据，以防数据丢失。
+        yes: 是（Ext4 文件系统）
+      description:
+        label: 描述
+      lastFormattedAt:
+        info: 磁盘已被强制格式化。
+      notification:
+        success: '成功更新主机 "{name}" 的存储配置。'
+      error: 主机存在未就绪或不可调度的磁盘。
+      fileSystem:
+        info: 当前文件系统为 {system}，可以手动格式化。
+        formatting: 磁盘正在格式化，请稍候。
+      tags:
+        label: 磁盘标记‌
+        addLabel: 添加磁盘标记‌
+      conditions: 状况
+      storageAvailable:
+        label: 可用存储空间
+      storageScheduled:
+        label: 存储已调度
+      storageMaximum:
+        label: 最大存储量‌
+      provisioner: 提供商
+      lvmVolumeGroup:
+        label: 卷组
+        create: 新建...
+      storage:
+        longhorn:
+          LonghornV1:
+            label: Longhorn V1 (CSI)
+          LonghornV2:
+            label: Longhorn V2 (CSI)
+        lvm:
+          label: LVM
+    tags:
+      label: 主机标记‌
+      addLabel: 添加主机标记‌
+    powerAction:
+      message:
+        success: '执行主机 { name } { operation } 成功。'
+    ntp:
+      label: NTP 服务器地址
+      tips: 您可以配置多个 IPv4 地址或主机地址。
+      placeholder: 例如：IPv4
+      ntpSyncStatus:
+        isDisabled: 'NTP 已禁用。请检查 NTP 服务是否激活。'
+        isUnsynced: 'NTP 未与 NTP 服务器 {current} 同步。'
+
+  virtualMachine:
+    label: 虚拟机
+    osType: OS 类型
+    instance:
+      singleInstance:
+      multipleInstance:
+      single:
+        label: 单实例
+        nameLabel: 名称
+        host:
+          label: 主机名
+          placeholder: 默认为虚拟机名称。
+      multiple:
+        label: 多实例
+        nameNsDescription: 每个实例的名称前缀
+        count: 数量
+        countTip: 数量应在 1-10 之间
+        nameLabel: 名称前缀
+        host:
+          label: 主机前缀名称
+          placeholder: 默认为虚拟机名称。
+    useTemplate:
+      label: "使用虚拟机模板："
+      template:
+        label: 模板
+      version:
+        label: 版本
+    console:
+      novnc: 在 WebVNC 中打开
+      serial: 在串行控制台中打开
+    promptRemove:
+      title: '选择要删除的卷：'
+      deleteAll: 全部删除
+      tips: "警告： 虚拟机的快照将与虚拟机一起删除，卷的快照将与卷一起删除。"
+    unplug:
+      title: '您确定要卸载存储卷 {name} 吗？'
+      actionLabel: 卸载
+      detachVolume:
+        卸载卷
+    restartTip: |-
+      现在就{restart, select,
+        true {重启}
+        other {启动}
+      }虚拟机，使配置更改生效。
+    runStrategy: 运行策略
+    maintenanceStrategy:
+      label: 维护策略
+      options:
+        Migrate: 迁移
+        ShutdownAndRestartAfterEnable: 启用后关机并重启
+        ShutdownAndRestartAfterDisable: 禁用后关机并重启
+        Shutdown: 关机
+    cpuPinning:
+      label: 启用 CPU Pinning
+      tooltip: 启用 CPU Pinning 可为虚拟机带来更好的性能并减少延迟
+      restartVMMessage: 更改 CPU Pinning 设置需要重启虚拟机才能生效
+      migrationMessage: 由于配置了 CPU Pinning，该虚拟机只能迁移到已启用 CPU 管理器的目标节点上。
+    restartNow: |-
+      现在就{restart, select,
+        true {重启}
+        other {启动}
+      }
+    createSSHKey: 创建新的...
+    installAgent: 安装客户机代理‌
+    enableUsb: 启用 USB Tablet
+    advancedOptions:
+      tpm: 启用 TPM
+      tpmPersistentState: TPM 持久状态
+      cpuManager:
+        prefix: 必须为至少一个节点启用 CPU 管理器在
+        middle: '主机页面中'
+        suffix: 才能为虚拟机启用 CPU Pinning。
+      efiEnabled: 以 EFI 模式启动
+      efiPersistentState: EFI 持久状态
+      secureBoot: 安全启动
+    usbTip: 提供绝对定位指针设备，通常有助于在 VNC 中获得一致的鼠标光标位置。
+    sshTitle: 添加 SSH 公钥
+    imageTip: 虚拟机创建所需外部镜像文件(.iso, .img, .qcow2 或 .raw)的远程URL
+    volume:
+      dragTip: 通过拖拽存储卷或使用卷旁箭头按钮调整启动顺序。
+      volumeTip: 虚拟机只包含一个 CD-ROM 卷。您可能需要添加其他磁盘卷。
+      macTip: "客户机系统内部识别的 MAC 地址"
+      volumeUpdate: '设置卷 { name } 成功'
+      type: 类型
+      size: 大小
+      edit: 编辑
+      bus:  Bus
+      readyToUse: 准备就绪
+      bootOrder: 启动顺序
+      volume: 卷
+      dockerImage: Docker Image
+      addVolume: 添加卷
+      addExistingVolume: 添加现有卷
+      addVmImage: 添加虚拟机 Image
+      addContainer: 添加容器
+      setFirst: 设为根卷
+      saveVolume: 更新卷
+      encryption: 加密
+      vmImageVolumeTip: 磁盘大小 ({diskSize}) 应大于选定的 image 虚拟大小 ({imageVirtualSize})
+      lockTooltip:
+        all: 所有卷都已加密。
+        partial: 有些卷是加密的。
+      title:
+        vmImage: Image 卷
+        existingVolume: 现有卷
+        volume: 卷
+        container: 容器
+      unmount:
+        title: 你确定吗？
+        message: 您确定要卸载此卷吗？
+    network:
+      title: 网络
+      addNetwork: 添加网络
+      addPort:  添加端口
+    cloudConfig:
+      title: 云配置
+      createTemplateTitle: '创建 {name}.'
+      createNew: 创建新的...
+      cloudInit:
+        label: 云初始化
+        placeholder: 选择一个模板
+      user:
+        label: 用户数据模板
+        title: "用户数据："
+        tip: "在启动过程中，您可以指定用户数据来配置实例或运行配置脚本。若同时启动多个实例，该批次内所有实例均可访问同一用户数据。 <a href='https://cloudinit.readthedocs.io/en/latest/topics/examples.html' target='_blank'>了解更多</a>"
+      network:
+        label: 网络数据模板
+        title: "网络数据："
+        tip: "网络数据配置（network-data）支持通过分配子网配置、创建虚拟设备（绑定、桥接、VLAN）、路由及 DNS 配置来自定义实例的网络接口.<a href='https://cloudinit.readthedocs.io/en/latest/reference/network-config-format-v1.html' target='_blank'>了解更多</a>"
+    scheduling:
+      affinity:
+        anyNode: '在任何可用节点上运行虚拟机'
+        schedulingRules: '在符合调度规则的节点上运行虚拟机'
+        specificNode: 在指定节点运行虚拟机 - (不支持热迁移)
+      networkNotSupport: 网络不支持调度功能
+    accessCredentials:
+      resetPwd:
+        label: 添加基本认证
+      injectSSH:
+        label: 添加 SSH 密钥
+        users: 选择用户
+        addUser: 添加用户
+      tips: 需安装 QEMU Guest Agent 以启用凭证访问功能。添加凭证后需重启虚拟机，删除凭证后需登录虚拟机内手动修改密码或移除 SSH 密钥。
+      userTips: 要添加的用户必须已经存在；否则，凭据将不会生效。
+      duplicatedUser: 用户已存在。
+      invalidUser: 用户名无效。
+    input:
+      name: 名称
+      memory: Memory
+      image: Image
+      sshKey: SSH 密钥
+      sshKeyValue: SSH 密钥值
+      MachineType: 机器类型
+      username: 用户名
+      password: 密码
+      reservedMemory: 预留内存
+    machineTypeTip: '指定要模拟的处理器架构。要查看支持的架构列表，请运行：qemu-system-x86_64 -cpu?'
+    detail:
+      tabs:
+        overview: 概述
+        details: 详情
+        environment: 环境
+        events: 事件
+        migration: 迁移
+        console: 控制台
+        networkInterfaces: 网络接口
+        disks: 磁盘
+        networks: 网络
+        basics: 基本信息
+        configurations: 配置
+        inventory: Inventory
+        hostBasic: 基本属性
+        instance: 虚拟机
+        monitor: 监控数据
+        keypairs: SSH 密钥
+        cloudConfig: 云配置
+        metrics: 虚拟机指标
+      details:
+        title:
+          vmDetails: 虚拟机详细信息
+          requirements: 调度与资源需求
+          services: 服务
+          users: 已登录用户
+        name: 名称
+        totalSnapshotQuota: 快照总配额
+        namespace: 命名空间
+        created: 已创建
+        hostname: 主机名
+        node: 节点
+        ipAddress: IP 地址
+        status: 状态
+        pod: Pod
+        labels: 标签
+        bootOrder: 启动顺序
+        annotations: 注解
+        CDROMs: CD-ROMs
+        description: 描述
+        operatingSystem: 操作系统
+        template: 模板
+        kernelRelease: 内核版本
+        owner: 所有者
+        workloadProfile: 工作负载配置文件‌
+        nodeSelector: 节点选择器
+        flavor: Flavor
+        tolerations: Tolerations
+        dedicatedResources: 专用资源
+        down: 虚拟机未运行‌
+        affinityRules: 亲和规则
+        sourceNode: 源节点
+        targetNode: 目标节点
+        started: 已启动
+        ended: 已完成
+      notAvailable: 不可用
+      GuestAgentNotInstalled: 需安装客户机代理‌
+      noOwner: 未指定所有者‌
+      events:
+        from: 生成自
+        down: 过去1小时内无事件‌
+      console:
+        down: 该虚拟机已停机。请启动它以访问其控制台。
+        shortcutKeys: 快捷键
+        customShortcutKeys: 自定义快捷键
+        management: 管理快捷键
+        record:
+          start: 录制
+          recording: 录制中
+          stop: 停止录制
+          tips: 按下录制按钮即可捕捉键盘输入。
+          send: 发送
+          preferredKeys: 首选自定义快捷键
+    terminationGracePeriodSeconds:
+      label: 终止缓冲期
+    affinity:
+      addLabel: 添加工作负载选择器
+      topologyKey:
+        placeholder: 'topology.kubernetes.io/zone'
+      thisPodNamespace: 该虚拟机的命名空间
+      matchExpressions:
+        inNamespaces: "这些命名空间中的工作负载"
+      namespaces:
+        label: 命名空间
+    instanceLabels:
+      banner: 这些标签会自动同步到虚拟机实例。
+    labels:
+      banner: 这些键值会作为标签添加到虚拟机中。
+
+  volume:
+    label: 卷
+    tabs:
+      basics: 基本信息
+      snapshots: 快照
+      datasource: 数据来源
+      details: 详情
+    size: 大小
+    volumeMode: 卷模式
+    source: 源
+    kind: Kind
+    sourceOptions:
+      new: New
+      vmImage: 虚拟机 Image
+    image: Image
+    frontend: Frontend
+    blockdev: 块设备
+    attachedNode: Attached 节点
+    endpoint: Endpoint
+    diskTags: 磁盘标记‌
+    nodeTags: 节点标记‌
+    lastBackup: 最近备份
+    lastBackupAt: 最近备份时间‌
+    replicasNumber: 副本数量
+    promptRemove:
+      tips: "警告： 卷的快照将随该卷一起删除。"
+    externalLink:
+      tips: 检查卷详情
+    rebuildingMessage: '重建: {percentage}%'
+    longhorn:
+      disableResize: 'Longhorn V2 卷无法调整大小。'
+
+  image:
+    label: Images
+    tabs:
+      basics: 基本信息
+    url: URL
+    size: 大小
+    isEncryption: 加密
+    encryptionSecret: 加密密文
+    virtualSize: 虚拟大小
+    urlTip: '支持  <a href="https://www.qemu.org/docs/master/system/images.html#disk-image-file-formats" target="_blank">qemu</a> 兼容的 <code>raw</code> 和 <code>qcow2</code> image 格式。 可启动的 ISO 镜像亦可使用，其处理方式与 <code>raw</code> image 相同。'
+    fileName: 文件名
+    uploadFile: 上传文件
+    source: 源类型
+    sourceType:
+      download: URL
+      upload: 文件
+      clone: 克隆
+      encrypt: 加密
+      decrypt: 解密
+    sourceImage: 源 Image
+    cryptoOperation: 加密操作‌
+    warning:
+      uploading: |-
+        {count, plural,
+        =1 {1 个 image 正在上传, 请不要刷新或关闭页面。}
+        other {{count} 个 image are 正在上传, 请不要刷新或关闭页面。}
+        }
+    checksum: 校验和
+    checksumTip: 使用 SHA512 校验和（如果指定）验证 image。
+
+  vmTemplate:
+    label: 模板
+    tabs:
+      basics: 基本信息
+    nameNsDescription:
+      name: 模板名称
+    tips:
+      notExistImage:
+        title: Image {name} 不存在！
+        message: 请选择一个新的 image。
+      notExistNode:
+        title: 节点 {name} 不存在！
+        message: 请选择一个新的节点。
+
+  upgradePage:
+    upgradeApp: 升级软件
+    upgrade: 升级
+    upgradeTip: 请选择要升级到的版本
+    currentVersion: 当前版本
+    versionLabel: 可用的兼容版本
+    enableLogging: 启用日志
+    skipSingleReplicaDetachedVol: 跳过单副本分离卷检查
+    upgradeNode: 升级节点
+    upgradeSysService: 升级系统服务
+    upgradeImage: 下载升级 Image
+    osUpgrade: OS 升级
+    uploadNew: 上传新 Image
+    selectExisting: 选择现有 Image
+    createRepository: 创建升级存储库
+    succeeded: 已成功
+    releaseTip: 请仔细阅读升级文档，详细信息可查阅<a href="{url}" target="_blank">Harvester 版本说明</a>。
+    checkReady: 我已仔细阅读并理解该 Harvester 版本相关的升级说明。
+    pending: Pending
+    repoInfo:
+      upgradeStatus: 升级状态
+      os: OS
+      kubernetes: Kubernetes
+      monitoringChart: 监控 Chart
+      harvesterChart: Harvester Chart
+      success: 成功
+      fail:  失败
+      ongoing: 进行中
+      downloadLog: 下载日志
+      logStatus: 日志下载状态
+    dismissMessage: Dismiss it
+    upgradeInfo:
+      warning: 警告
+      doc: 在开始升级流程前，请务必仔细阅读相关说明<a href="{url}" target="_blank">文档 </a>。并严格完成与当前运行环境及目标版本相关联的必要操作步骤。
+      tip: 系统要求未达标及操作步骤执行错误可能导致升级完全失败，并引发其他需人工干预的问题‌。
+      moreNotes: 有关发布说明的更多详情，请访问 -
+
+  schedule:
+    label: 虚拟机调度‌
+    createTitle: 创建调度策略‌
+    createButtonText: 创建调度策略‌
+    scheduleType: 虚拟机调度‌类型
+    cron: Cron定时任务调度‌
+    detail:
+      namespace: 命名空间
+      sourceVM: 源虚拟机
+    tabs:
+      basic: Basic
+      backups: 备份
+      snapshots: 快照
+    message:
+      noSetting:
+        suffix: 在创建备份计划之前
+    retain:
+      label: 保留
+      count: 数量
+      tooltip: 要保留的最新虚拟机备份数量。最多 250 个，最少 2 个。
+    maxFailure:
+      label: 最大失败次数
+      count: 数量
+      tooltip: 可容忍的最大连续备份失败次数。如果达到此阈值，Harvester 控制器将暂停计划任务。该值应小于保留次数。
+    virtualMachine:
+      title: 虚拟机名称
+      placeholder: 选择虚拟机
+    type:
+      snapshot: 快照
+      backup: 备份
+
+  backup:
+    label: 虚拟机备份
+    createText: 恢复备份
+    title: 恢复虚拟机
+    refreshInterval:
+      label: 刷新间隔
+      tip: 备份目标数据同步至 Harvester 集群的时间间隔。设为 0 可禁用刷新机制。
+    backupTargetTip: 用于访问备份存储的端点。支持 NFS 和 S3。
+    message:
+      noSetting:
+        prefix: 必须配置备份目标
+        middle: '设置'
+        suffix: 在创建新备份之前。
+      errorTip:
+        prefix: 备份目标值在
+        middle: 设置
+        suffix: "无效的, 错误: "
+      viewSetting:
+        prefix: 点击
+        middle: 这里
+        suffix: 查看备份配置。
+      testConnect:
+        actionLabel: 测试连接
+        waitingLabel: 测试连接中...
+        successLabel: 连接已测试
+        successMessage: 'Harvester 可以成功连接到端点 {endpoint}'
+    restore:
+      backup: 备份
+      deletePreviousVolumes: 删除以前的卷
+      createNew: 新建
+      replaceExisting: 替换现有的
+      virtualMachineName: 虚拟机名称
+      keepMacAddress: 保留 MAC 地址
+    matchTarget: 当前备份目标与现有目标不匹配。
+    progress:
+      details: 卷详情
+      tooltip:
+        starting: 备份启动中
+        progress: 备份进行中
+        complete: 备份已完成
+  restore:
+    progress:
+      details: 卷详情
+      tooltip:
+        starting: 恢复启动中
+        progress: 恢复进行中
+        complete: 恢复已完成
+
+  network:
+    label: 虚拟机网络
+    tabs:
+      basics: 基本信息
+      layer3Network: 路由
+    clusterNetwork:
+      label: 集群网络
+      create: 创建新的群集网络
+      toolTip: 定义您的自定义集群范围网络名称
+      createPlaceholder: 输入新的群集网络名称
+      selectOrCreatePlaceholder: 选择或创建新的群集网络
+      selectPlaceholder: 选择集群网络
+    layer3Network:
+      mode:
+        label: 模式
+        auto: 自动 (DHCP)
+        manual: 手动
+      serverIPAddr:
+        label: DHCP 服务器 IP
+      gateway:
+        label: 网关
+        placeholder: 例如：172.16.0.1
+      cidr:
+        label: CIDR
+        placeholder: 例如：172.16.0.1/24
+  sshKey:
+    label: SSH 密钥
+    keypair: SSH 密钥
+    tabs:
+      basics: 基本信息
+
+  setting:
+    label: 设置
+    tabs:
+      advanced: 高级
+      ui: UI
+    validation:
+      physicalNIC: 默认物理网卡
+    placeholder:
+      accessKeyId: 指定访问 key ID
+      secretAccessKey: 指定密钥访问 key
+      cert: 上传自签名 SSL 证书
+    vlanChangeTip: 新修改的默认网络接口只适用于新添加的节点，不适用于现有节点。
+    defaultPhysicalNIC: 默认网络接口
+    modifiedMessage: 与默认不同的设置会标记为“已修改”（Modified）。
+    percentTip: 括号中的数值表示该网络接口在所有主机上的分布百分比。若选择低于 100% 的接口，则需用户手动指定 VLAN 网络配置失败的主机上的网络接口。
+    message:
+      ca:
+        prefix: '点击'
+        middle: '这里'
+        suffix: '添加自定义证书。'
+    sslCertificates:
+      publicCertificate: 公共证书
+      privateKey: 私钥
+      ca: CA
+    storageNetwork:
+      range:
+        placeholder: 例如：172.16.0.0/24
+        label: IP 范围
+        invalid: '"范围"无效。'
+      clusterNetwork: 集群网络
+      vlan: VLAN ID
+      exclude:
+        label: 排除
+        placeholder: 例如：172.16.0.1/32
+        invalid: '"排除列表"无效。'
+        addIp: 添加排除 IP
+      warning: '警告：<br/> 对存储网络的任何变更需在应用配置前关闭所有虚拟机。 <br/> 用户须确保集群网络已正确配置，且VLAN配置覆盖所有节点，并验证各节点的网络连通性符合预期。'
+      tip: '请以IPv4 CIDR格式指定IP地址范围。所需IP数量计算公式为：<code>所需IP数 = 节点数 * 2 + 磁盘数 * 2 + 需下载/上传的镜像数量</code>。有关存储网络设置的详细信息，请参阅<a href="{url}" target="_blank">官方文档</a>。'
+    vmForceDeletionPolicy:
+      period: 周期
+    ratio : 比例
+    autoRotateRKE2Certs:
+      expiringInHours: 有效期剩余
+    httpProxy:
+      warning: '警告: <br/> 若配置了  "http-proxy" 和 "https-proxy"，必须将 Harvester 节点的 CIDR 地址段加入 "no-proxy" 列表，否则会导致 Harvester 集群异常。'
+    supportBundleImage:
+      imagePullPolicy: 拉取策略
+      repo: 仓库
+      tag: 标记‌
+    csiDriverConfig:
+      provisioner: 提供商
+      volumeSnapshotClassName: 卷快照类名称
+      backupVolumeSnapshotClassName: 备份卷快照类名称
+    containerdRegistry:
+      mirrors:
+        mirrors: Mirrors
+        registryName: Registry 名称
+        endpoints: 端点
+        rewrite:
+          rewrite: Rewrite
+          addRewrite: 添加 Rewrite
+        addMirror: 添加 Mirror
+      configs:
+        configs: 配置
+        registryEDQNorIP: Registry FDQN 或 IP
+        registryPlaceholder: myregistry.local:5000
+        username: 用户名
+        password: 密码
+        auth: 认证‌
+        identityToken: ‌身份令牌‌
+        insecureSkipVerify: 跳过安全校验
+        addConfig: 添加配置
+
+    upgrade:
+      selectExitImage: 请选择要升级的操作系 image。
+      imageUrl: 请输入有效的 image URL.
+      chooseFile: 请选择上传的 image.
+      checksum: 校验和
+    harvesterMonitoring:
+      label: Harvester 监控
+      section:
+        prometheus: Prometheus
+        prometheusNodeExporter: Prometheus 节点 Exporter
+        grafana: Grafana
+        alertmanager: Alertmanager
+      tips:
+        scrape: 连续抓取间隔‌
+        evaluation: 连续评估间隔‌
+        retention: 指标应保留多久
+        retentionSize: ‌指标最大容量‌	
+    clusterRegistrationUrl:
+      message: 若要彻底解除已导入的 Harvester，还需通过 Rancher Dashboard UI 中的<code> Virtualization Management </code>页面执行删除操作‌。
+    ntpServers:
+      isNotIPV4: 您输入的地址不是 IPv4 或主机地址。请输入有效的 IPv4 地址或主机地址。
+      isDuplicate: 有重复的 NTP 服务器配置。
+  cloudTemplate:
+    label: 云配置模板
+    templateType: 模板类型
+    userData: 用户数据
+    networkData: 网络数据
+
+  support:
+    title: Harvester 支持
+    kubeconfig:
+      title: 下载 KubeConfig
+      titleDescription: 下载 kubeconfig 文件以供调试使用‌
+    internal:
+      rancher:
+        title: 访问内嵌的 Rancher UI
+        titleDescription: 内置的 Rancher UI 仅限用于调试及验证场景。有关 Harvester 与 Rancher 的集成机制详情，请参阅官方 <a target="_blank" href="{url}" rel="noopener noreferrer nofollow">文档‌</a>。
+      longhorn:
+        title: 访问内置的 Longhorn UI
+        titleDescription: 我们只支持在调试和验证时使用内置的 Longhorn UI。
+    community:
+      learnMore: 了解有关 SUSE Harvester 支持的更多信息
+      pricing: 联系我们了解价格
+
+  namespace:
+    label: 命名空间
+
+  projectNamespace:
+    label: 项目/命名空间
+
+  vip:
+    namespace:
+      label: 命名空间
+    cidr:
+      label: CIDR/IP 范围
+      invalid: '"CIDR/IP Range" 无效'
+      toolTip: "我们可以使用逗号分隔多个池或范围。例如：192.168.0.200/30,192.168.0.200/29 或 192.168.0.10-192.168.0.11"
+    add:
+      label: 添加 IP 池
+
+  sslParameters:
+    protocols:
+      label: 协议
+    ciphers:
+      label: Ciphers
+
+  monitoring:
+    configuration:
+      label: 配置
+    alertmanagerConfig:
+      label: Alertmanager 配置
+      diabledMonitoringTips:
+        prefix: '首先启用'
+        middle: '监控'
+        suffix: '插件'
+      diabledAlertingTips:
+        prefix: '启用'
+        middle: 'Alertmanager'
+        suffix: '使配置生效。'
+      disabledAddon:
+        prefix: '监控插件已禁用，点击'
+        middle: '这里'
+        suffix: '启用'
+
+  logging:
+    configuration:
+      section:
+        fluentbit: Fluentbit
+        fluentd: Fluentd
+    clusterFlow:
+      label: 集群级 Flows
+    clusterOutput:
+      label: 集群级 Outputs
+    flow:
+      label: Flows
+    output:
+      label: Outputs
+    diabledTips:
+        prefix: '启用'
+        middle: '日期'
+        suffix: '使配置生效。'
+
+  snapshot:
+    totalSnapshotSize: 快照总大小
+    label: 卷快照
+    targetVolume: Original 卷
+    size: 大小
+    image: Image
+
+  vmSnapshot:
+    label: 虚拟机快照
+    createText: 恢复快照
+    snapshot: 快照
+
+  storage:
+    label: 存储
+    useDefault: 使用默认存储
+    volumeEncryption: 卷加密
+    secret: 密文
+    migratable:
+      label: 可迁移
+    numberOfReplicas:
+      label: 副本数量
+    staleReplicaTimeout:
+      label: 陈旧副本超时‌
+    nodeSelector:
+      label: 主机选择器
+    diskSelector:
+      label: 磁盘选择器
+    storageClass:
+      label: 存储类
+      longhorn:
+        v1:
+          label: Longhorn V1 (CSI)
+        v2:
+          label: Longhorn V2 (CSI)
+        versionTooltip: 该节点已禁用 Longhorn V2。
+      lvm:
+        label: LVM
+    title: 存储类
+    customize:
+      volumeBindingMode:
+        later: 使用 PersistentVolumeClaim 创建虚拟机后，绑定并配置持久卷
+    parameters:
+      numberOfReplicas:
+        label: 副本数量
+      staleReplicaTimeout:
+        label: 陈旧副本超时‌
+      diskSelector:
+        label: 磁盘选择器
+        no-options: 当前无可用标记‌，请前往 `Host > Storage` 页面添加‌
+      nodeSelector:
+        label: 节点选择器
+        no-options: 当前无可用标记‌，请前往`Host > Storage` 页面添加‌
+      migratable:
+        label: 可迁移
+      lvmVolumeGroupType:
+        label: 卷组类型
+      lvmVolumeGroup:
+        label: 卷组名称
+        no-options: 当前无可用卷组，请前往 `Host > Storage` 页面添加‌
+      node:
+        label: 节点
+    allowedTopologies:
+      title: 允许的拓扑结构
+      tooltip: 允许的拓扑结构可帮助在符合以下所有表达式的主机上调度虚拟机。
+
+  vlanConfig:
+    title: 网络配置
+    createNetworkConfig: 创建网络配置
+    action:
+      migrate: 迁移
+    titles:
+      nodeSelector: 节点选择器
+      uplink: 上行链路
+      bondOptions: 绑定模式‌
+      attributes: 属性
+      host: 所选主机‌
+    scheduling:
+      affinity:
+        allNodes: 选择所有节点
+        specificNode: 选择指定节点
+        schedulingRules: 选择符合规则的节点
+    uplink:
+      nics:
+        label: 网卡
+        addLabel: 添加网卡
+        placeholder: 选择所有选定节点上都可用的网卡
+        validate:
+          available: 所选节点上的网卡 "{nic}" 不可用
+      linkAttributes:
+        mtu:
+          label: MTU
+      bondOptions:
+        mode:
+          label: 模式
+        miimon:
+          label: Miimon
+          tooltip: miimon 参数用于指定 MII 链路监控的频率（单位为毫秒），设为 <Code>-1</Code> 表示保留原有配置值。
+    nodeSelector:
+      matchingNodes:
+        matchesSome: |-
+          {matched, plural,
+            =0 {匹配 0 of {total, number} 节点.}
+            =1 {匹配 1 of {total, number} 节点: "{sample}"}
+            other {匹配 {matched, number} of {total, number} 现有节点, 包括 "{sample}"}
+          }
+
+  vlanStatus:
+    vlanConfig:
+      label: 网络配置
+
+  clusterNetwork:
+    title: 集群网络配置
+    create:
+      button:
+        label: 创建集群网络
+    clusterNetwork: 没有定义网络配置。
+    mgmt: mgmt 是内置的群集管理网络，不支持任何其他网络配置。
+    notExist: '集群网络 "{ clusterNetwork }" 不存在'
+    notReady: '集群网络 "{ clusterNetwork }" 未就绪'
+
+  addons:
+    descriptions:
+      'harvester-system/vm-import-controller': vm-import-controller 是一个插件，可帮助将虚拟机工作负载从其他源集群迁移到现有 Harvester 集群。
+      'harvester-system/pcidevices-controller': pcidevices-controller 是一个插件，可帮助发现集群中节点的 PCI 设备，并允许用户为 PCI 直通准备设备，供 Harvester 虚拟机和子集群使用。
+      'cattle-logging-system/rancher-logging': rancher-logging 是一个插件，用于从 Harvester 集群收集通用日志、事件和审计，并根据流量将其路由到多种服务器。
+      'harvester-system/rancher-vcluster': rancher-vcluster 部署安装了 Rancher 的虚拟集群（vcluster）。
+      'cattle-monitoring-system/rancher-monitoring': rancher-monitoring 是一个插件，用于收集 Harvester 集群和虚拟机指标，让你能在内置的 dashboard 上查看指标，并向远程服务器发送警报。
+      'vm-import-controller': vm-import-controller 一个插件，可帮助将虚拟机工作负载从其他源集群迁移到现有 Harvester 集群。
+      'pcidevices-controller': pcidevices-controller 是一个插件，可帮助发现集群中节点的 PCI 设备，并允许用户为 PCI 直通准备设备，供 Harvester 虚拟机和子集群使用。
+      'nvidia-driver-toolkit': 'nvidia-driver-toolkit 是一个插件，用于启用 vGPU 设备并将其分配给 Harvester 虚拟机。'
+      'rancher-logging': rancher-logging 是一个插件，用于从 Harvester 集群收集通用日志、事件和审计，并根据流量将其路由到多种服务器。
+      'rancher-monitoring': rancher-monitoring 是一个插件，用于收集 Harvester 集群和虚拟机指标，让你能在内置的 dashboard 上查看指标，并向远程服务器发送警报。
+      'rancher-vcluster': rancher-vcluster 部署安装了 Rancher 的虚拟集群（vcluster）。
+      'harvester-seeder': harvester-seeder 一个插件，可使用 IPMI 和 Redfish 发现硬件信息并执行带外操作。
+      'harvester-system/harvester-seeder': harvester-seeder 一个插件，可使用 IPMI 和 Redfish 发现硬件信息并执行带外操作。
+      'harvester-csi-driver-lvm': harvester-csi-driver-lvm 是一个插件，允许用户通过本地设备的 LVM 创建 PVC。
+    vmImport:
+      titles:
+        basic: Basic
+        pvc: 卷
+    rancherVcluster:
+      accessRancher: 访问 Rancher Dashboard
+      hostname: 主机名
+      rancherVersion: Rancher 版本
+      password: 初始密码
+    switchFailed: "{action} {name} 失败！"
+    nvidiaDriverToolkit:
+      titles:
+        basic: 控制器
+        image: Image
+        driver: Driver
+      image:
+        tag: Image 标记‌
+        repository: Image 仓库
+      driver:
+        location: Driver 位置
+      parsingSpecError: 字段 'spec.valuesContent' 格式无效。
+    usbController:
+      titles:
+        basic: Basic
+
+  loadBalancer:
+    label: 负载均衡器
+    tabs:
+      basic: Basic
+      listeners: Listeners
+      healthCheck: 健康检查
+      backendServer: 后端服务器选择器
+    workloadType:
+      label: 工作负载类型
+      options:
+        cluster: Kubernetes 子集群
+        vm: 虚拟机
+    ipam:
+      label: IPAM
+      options:
+        dhcp: DHCP
+        pool: 池
+    ipPool:
+      label: IP 池
+      options:
+        none: 自动 (自动选项 IP 池)
+    listeners:
+      name:
+        label: 名称
+      protocol:
+        label: 协议
+      port:
+        label: 端口
+      backendPort:
+        label: 后端端口
+        placeholder: 例如：80
+    backendServerSelector:
+      matchingVMs:
+        matchesSome: |-
+          {matched, plural,
+            =0 {匹配负载均衡器所在的命名空间中的 0 of {total, number} 个虚拟机。}
+            =1 {匹配负载均衡器所在的命名空间中的 1 of {total, number} 个虚拟机: "{sample}"}
+            other {匹配负载均衡器所在的命名空间中的 {matched, number} of {total, number} 个现有虚拟机，包括 "{sample}"}
+          }
+    backendServers:
+      label: 后端服务器
+    healthCheck:
+      warning:
+        portInUse: 警告，健康检查设置中正在使用后端端口 {port}。如果需要更新端口，请相应更新健康检查设置。
+
+  ipPool:
+    label: IP 池
+    network:
+      label: 虚拟机网络
+    tabs:
+      range: 范围
+      scope: Scope
+      selector: 选择器
+    subnet:
+      label: 子网
+    startIP:
+      label: 起始 IP
+    endIP:
+      label: 结束 IP
+    gateway:
+      label: 网关
+    namespace:
+      label: 命名空间
+    project:
+      label: 项目
+    guestCluster:
+      label: Kubernetes 子集群
+    availableIP:
+      label: 可用的 IP 数量
+    scope:
+      label: Scope
+      addLabel: 添加 Scope
+    priority:
+      label: 优先级
+    cidr:
+      addLabel: 添加 CIDR
+    range:
+      addLabel: 添加 Range
+
+  service:
+    healthCheckPort:
+      label: 健康检查端口
+    healthCheckSuccessThreshold:
+      label: 健康检查成功阈值
+      description: 当探针连续成功探测某地址的次数达到成功阈值时，后端服务器即可开始接收并转发流量‌
+    healthCheckFailureThreshold:
+      label: 健康检查失败阈值
+      description: 如果健康检查失败次数达到失败阈值，后端服务器将停止转发流量。
+    healthCheckPeriod:
+      label: 健康检查周期
+    healthCheckTimeout:
+      label: 健康检查超时
+    healthCheckEnabled:
+      label: 健康检查
+
+  secret:
+    label: 密文
+
+  sriov:
+    label: SR-IOV 网络设备
+    nodeName: 节点
+    numVFs: Virtual Functions 数量
+    vfAddresses: Virtual Functions 地址
+    showMore: 显示更多
+    parentSriov: 按父级 SR-IOV 过滤
+
+  sriovgpu:
+    label: SR-IOV GPU 设备
+    nodeName: 节点
+    numVFs: Virtual Functions 数量
+    vfAddresses: Virtual Functions 地址
+    vGpuDevices: vGPU 设备
+    showMore: 显示更多
+    parentSriov: 按父级 SR-IOV GPU 过滤
+    noPermission: 请先联系系统管理员添加 Harvester 插件。
+    goSetting:
+      prefix: nvidia-driver-toolkit 插件未启用，请点击
+      middle: 这里
+      suffix: 以启用它来管理 SR-IOV GPU 设备。
+
+  vgpu:
+    label: vGPU 设备
+    noPermission: 请先联系系统管理员添加 Harvester 插件。
+    goSetting:
+      prefix: nvidia-driver-toolkit 插件未启用，请点击
+      middle: 这里
+      suffix: 以启用它来管理 vGPU 设备。
+    enableGroup: 启用组
+    disableGroup: 禁用组
+    enable:
+      title: 选择 vGPU
+      type: 类型
+    available: 可用设备
+    compatibleNodes: Compatible Nodes
+    impossibleSelection: '没有包含所有选定设备的主机。'
+    howToUseDevice: '通过下方表格启用您需在此虚拟机中使用的 vGPU 设备‌。'
+    deviceInTheSameHost: '只能选择同一主机上的设备。'
+
+  usb:
+    label: USB 设备
+    noPermission: 请先联系系统管理员添加 Harvester 插件
+    goSetting:
+      prefix: pcidevices-controller 未启用，请点击
+      middle: 这里
+      suffix: 以启用它来管理 USB 设备.
+    enableGroup: 启用组
+    disableGroup: 禁用组
+    available: 可用的 USB 设备
+    compatibleNodes: 兼容节点‌
+    impossibleSelection: '没有包含所有选定设备的主机。'
+    howToUseDevice: '通过下方表格启用您需在此虚拟机中使用的 USB 直通设备‌'
+    deviceInTheSameHost: '只能选择同一主机上的设备。'
+    showCompatibility: 显示设备兼容性矩阵
+    hideCompatibility: 隐藏设备兼容性矩阵
+    claimError: 在 {name} 上启用直通时出错
+    unclaimError: 在 {name} 上禁用直通时出错
+    cantUnclaim: 不能在其他用户使用的设备上禁用直通。
+    enablePassthroughWarning: '若设备路径在以下场景中发生变更，需重新启用 USB 设备‌：<br/>&nbsp1) 重新插拔 USB 设备。<br/>&nbsp2) 重启节点。<br/><br/>‌错误的设备路径可能导致直通功能失效‌。'
+
+  harvesterVlanConfigMigrateDialog:
+    targetClusterNetwork:
+      label: 目标集群网络
+      placeholder: 选择目标群集网络
+
+  seeder:
+    banner:
+      enable:
+        prefix: '"harvester-seeder" 插件已禁用。'
+        middle: 点击这里
+        suffix: 以启用他。
+      noAccess: 请联系您的系统管理员，首先启用带外访问。
+      noAddon: '"harvester-seeder" 插件不存在，请检查是否已安装。'
+      noInventory: 等待 "inventories.metal.harvesterhci.io" 就绪。
+    inventory:
+      host:
+        label: 主机
+        placeholder: 例如：172.16.1.1
+      port:
+        label: 端口
+        placeholder: 例如：623
+      insecureTLS:
+        label: 不安全的 TLS
+      secret:
+        label: 密文
+        create:
+          title: 添加密文
+      event:
+        label: Event
+      pollingInterval:
+        label: 轮询间隔‌
+
+typeDescription:
+  # Map of
+  # type: Description to be shown on the top of list view describing the type.
+  #       Should fit on one line.
+  #       If you link to anything external, it MUST have
+  #       target="_blank" rel="noopener noreferrer nofollow"
+  harvester: "品牌化配置允许管理员通过自定义 Harvester 产品名称，logo，配色方案，全局统一调整用户界面（UI）品牌形象‌"
+
+advancedSettings:
+  experimental: '实验性功能允许用户在官方支持版本发布前测试并评估早期访问功能'
+  descriptions:
+    'harv-vlan': VLAN 网络的默认网络接口名称。
+    'harv-backup-target': 用于存储虚拟机备份的自定义备份目标。
+    'branding': 品牌化配置允许管理员通过自定义 Harvester 产品名称，logo，配色方案，全局统一调整用户界面（UI）品牌形象。
+    'harv-csi-driver-config': ‌为 CSI 驱动配置附加信息‌。
+    'harv-containerd-registry': Containerd Registry Configuration to connect private registries.
+    'harv-log-level': 配置 Harvester 服务器日志级别。默认为 Info。
+    'harv-server-version': Harvester 服务器版本。
+    'harv-upgrade-checker-enabled': ‌指定是否启用 Harvester 升级检查功能，默认值为 True‌。
+    'harv-upgrade-checker-url': ‌Harvester 升级检查默认 URL，仅在 <code>upgrade-checker-enabled</code> 设置为 True 时启用‌。
+    'harv-ui-source': 配置用户界面资源加载方式。
+    'harv-ui-index': 'UI 的 HTML index 地址。'
+    'harv-ui-plugin-index': 'Harvester 插件 UI JS index 地址'
+    'harv-cluster-registration-url': 用于多群集管理的注册 URL。
+    'harv-http-proxy': '供 Harvester 访问外部服务的 HTTP 代理。'
+    'harv-additional-ca': '用于 TLS 验证的自定义 CA 根证书。'
+    'harv-overcommit-config': '资源超配配置。'
+    'harv-support-bundle-timeout': '支持 bundle 生成超时配置（分钟），设置为 0 可禁用超时机制‌。'
+    'harv-support-bundle-expiration': '支持 bundle 有效期配置（分钟）。'
+    'harv-support-bundle-node-collection-timeout': '支持 bundle 节点收集超时配置（分钟）。'
+    'harv-vm-force-reset-policy': ‌虚拟机在宕机节点上卡死时的强制重置操作配置‌。
+    'harv-ssl-parameters': 用于 TLS 验证的自定义 SSL 参数。
+    'harv-storage-network': 'Longhorn 存储网络设置。'
+    'harv-support-bundle-namespaces': 指定支持软件包要收集的其他命名空间中的资源。
+    'harv-auto-disk-provision-paths': 配置 Harvester 自动添加为虚拟机存储的磁盘（glob 模式匹配）‌。
+    'harv-support-bundle-image': 支持包镜像配置及版本查询(基于<a href="https://hub.docker.com/r/rancher/support-bundle-kit/tags" target="_blank">rancher/support-bundle-kit</a>)。
+    'harv-release-download-url': T通过此配置项可定义 <code>升级版本下载</code> URL 地址。Harvester 将从配置的 URL 地址（<code>$URL</code>/<code>$VERSION</code>/version.yaml）所托管的文件中获取 ISO 文件链接及校验值‌。
+    'harv-default-vm-termination-grace-period-seconds': 配置虚拟机停止时的终止宽限期。
+    'harv-ntp-servers': 配置 NTP 服务器。可以配置多个 IPv4 地址或主机地址。
+    'harv-auto-rotate-rke2-certs': 证书轮换机制依赖 Rancher 实现。Harvester 将通过自动更新证书生成版本触发轮换流程‌。
+    'harv-kubeconfig-default-token-ttl-minutes': '配置 Harvester 管理用 kubeconfig 文件的令牌有效期（TTL，单位：分钟）。默认值为 0，表示永不过期‌。'
+    'harv-longhorn-v2-data-engine-enabled': '启用 Longhorn V2 数据引擎。默认值为 false（禁用）。 <ul><li>修改此配置将触发所有节点上的 RKE2 重启，但运行中的虚拟机负载不受影响。</li><li>若启用时出现 "not enough hugepages-2Mi capacity" 错误，请等待 1 分钟以清除错误。 若错误持续，需重启受影响的节点‌。</li></ul>'
+    'harv-additional-guest-memory-overhead-ratio': '配置 KubeVirt 虚拟机内存开销的调节系数。允许值为零、空值或 1.0 到 10.0 之间的浮点数，默认值为 1.5‌。'
+
+typeLabel:
+  kubevirt.io.virtualmachine: |-
+    {count, plural,
+      one { 虚拟机 }
+      other { 虚拟机 }
+    }
+  harvesterhci.io.virtualmachineimage: |-
+    {count, plural,
+      one { Image }
+      other { Images }
+    }
+  harvesterhci.io.keypair: |-
+    {count, plural,
+      one { SSH 密钥 }
+      other { SSH 密钥 }
+    }
+  harvesterhci.io.host: |-
+    {count, plural,
+      one { 主机 }
+      other { 主机 }
+    }
+  harvesterhci.io.networkattachmentdefinition: |-
+    {count, plural,
+      one { 虚拟机网络 }
+      other { 虚拟机网络 }
+    }
+  harvesterhci.io.volume: |-
+    {count, plural,
+      one { 卷 }
+      other { 卷 }
+    }
+  harvesterhci.io.user:  |-
+    {count, plural,
+      one { 用户 }
+      other { 用户 }
+    }
+  harvesterhci.io.setting:  |-
+    {count, plural,
+      one { 配置 }
+      other { 配置 }
+    }
+  harvesterhci.io.virtualmachinetemplateversion: |-
+    {count, plural,
+      one { 模板 }
+      other { 模板 }
+    }
+  harvesterhci.io.schedulevmbackup: |-
+    {count, plural,
+      one { 虚拟机调度‌}
+      other { 虚拟机调度‌ }
+    }
+  harvesterhci.io.virtualmachinebackup: |-
+    {count, plural,
+      one { 虚拟机备份 }
+      other { 虚拟机备份 }
+    }
+  harvesterhci.io.cloudtemplate: |-
+    {count, plural,
+      one { 云配置模板 }
+      other { 云配置模板 }
+    }
+  harvesterhci.io.volumesnapshot: |-
+    {count, plural,
+      one { Volume Snapshot }
+      other { Volume Snapshots }
+    }
+  harvesterhci.io.vmsnapshot: |-
+    {count, plural,
+      one { 卷快照 }
+      other { 卷快照 }
+    }
+  network.harvesterhci.io.vlanconfig: |-
+    {count, plural,
+      one { 网络配置 }
+      other { 网络配置 }
+    }
+  harvesterhci.io.monitoring.alertmanagerconfig: |-
+    {count, plural,
+      one { Alertmanager 配置 }
+      other { Alertmanager 配置 }
+    }
+  harvesterhci.io.logging.clusterflow: |-
+    {count, plural,
+      one { 集群 Flow }
+      other { 集群 Flows }
+    }
+  harvesterhci.io.logging.clusteroutput: |-
+    {count, plural,
+      one { 集群 Output }
+      other { 集群 Outputs }
+    }
+  harvesterhci.io.logging.flow: |-
+    {count, plural,
+      one { Flow }
+      other { Flows }
+    }
+  harvesterhci.io.logging.output: |-
+    {count, plural,
+      one { Output }
+      other { Outputs }
+    }
+  harvesterhci.io.storage: |-
+    {count, plural,
+      one { 存储类 }
+      other { 存储类 }
+    }
+  devices.harvesterhci.io.pcidevice: |-
+    {count, plural,
+      one { PCI 设备 }
+      other { PCI 设备 }
+    }
+  persistentvolumeclaim: |-
+    {count, plural,
+      one { 卷 }
+      other { 卷 }
+    }
+  network.harvesterhci.io.clusternetwork: |-
+    {count, plural,
+      one { 集群网络 }
+      other { 集群网络 }
+    }
+  harvesterhci.io.addon: |-
+    {count, plural,
+      one { 插件 }
+      other { 插件 }
+    }
+  devices.harvesterhci.io.sriovnetworkdevice: |-
+    {count, plural,
+      one { SR-IOV 网络设备 }
+      other { SR-IOV 网络设备 }
+    }
+
+  devices.harvesterhci.io.sriovgpudevice: |-
+    {count, plural,
+      one { SR-IOV GPU 设备 }
+      other { SR-IOV GPU 设备 }
+    }
+
+  devices.harvesterhci.io.vgpudevice: |-
+    {count, plural,
+      one { vGPU 设备 }
+      other { vGPU 设备 }
+    }
+
+  harvesterhci.io.secret: |-
+    {count, plural,
+      one { 密文 }
+      other { 密文 }
+    }
+  harvesterhci.io.blockdevice: |-
+    {count, plural,
+      one { 磁盘 }
+      other { 磁盘 }
+    }
+  loadbalancer.harvesterhci.io.loadbalancer: |-
+    {count, plural,
+      one { 负载均衡器 }
+      other { 负载均衡器 }
+    }
+  loadbalancer.harvesterhci.io.ippool: |-
+    {count, plural,
+      one { IP 池 }
+      other { IP 池 }
+    }
