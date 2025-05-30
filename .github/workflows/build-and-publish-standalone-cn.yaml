@@ -1,0 +1,153 @@
+name: CN Build Harvester Dashboard and Publish
+
+on:
+  workflow_call:
+    inputs:
+      CI_BRANCH:
+        required: false
+        type: string
+      CI_BUILD_TAG:
+        required: false
+        type: string
+
+env:
+  GOOGLE_AUTH: ''
+  DOCKER_USERNAME: ''
+  DOCKER_PASSWORD: ''
+  CI_BUILD_TAG: ${{inputs.CI_BUILD_TAG}}
+  CI_BRANCH: ${{inputs.CI_BRANCH}}
+  GIT_REPO: ${{github.repository}}
+  GIT_COMMIT: ${{github.sha}}
+  REPO: ${{github.event.repository.name || ''}}
+
+jobs:
+  build-and-upload-hosted:
+    name: Build & Upload Hosted
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+        # Note - Cannot use the setup action here as it uses a different yarn install arg
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+        # Build a directory containing the dashboard that can be used with ui-dashboard-index
+      - id: build-hosted
+        name: Build Hosted
+        run: ./scripts/build-hosted
+
+      - id: upload-gate
+        name: Upload Gate (superseded by a newer build?)
+        run: ./scripts/build-upload-gate
+
+      # - id: install-aws-cli
+      #   name: Install AWS CLI
+      #   run: |
+      #     sudo apt-get update && sudo apt-get install -y unzip
+      #     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      #     unzip awscliv2.zip
+      #     sudo ./aws/install
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ap-southeast-2
+
+      - name: Upload build
+        run: |
+          aws s3 sync ${{steps.build-hosted.outputs.BUILD_HOSTED_DIR}} s3://cn-harvester-ui/dashboard/${{ steps.build-hosted.outputs.BUILD_HOSTED_LOCATION }} --delete --acl public-read
+
+  build-and-upload-embedded:
+    name: Build & Upload Embedded
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+        # Note - Cannot use the setup action here as it uses a different yarn install arg
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+        # Build a tar that will be picked up by rancher builds and embedded into it
+      - id: build-embedded
+        name: Build Embedded
+        run: ./scripts/build-embedded
+        env:
+          DISABLED_EMBED_PKG: https://releases.rancher.com/harvester-ui/plugin/harvester-1.0.3.tar.gz
+
+      # - id: install-aws-cli
+      #   name: Install AWS CLI
+      #   run: |
+      #     sudo apt-get update && sudo apt-get install -y unzip
+      #     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      #     unzip awscliv2.zip
+      #     sudo ./aws/install
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ap-southeast-2
+      
+      - name: Upload tar
+        run: |
+          aws s3 cp ${{steps.build-embedded.outputs.BUILD_EMBEDED_TGZ}} s3://cn-harvester-ui/dashboard/ --acl public-read
+
+  build-and-upload-harvester-plugin:
+    name: Build & Upload Plugin
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+        # Note - Cannot use the setup action here as it uses a different yarn install arg
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - id: ci-build-pkg
+        name: Build pkg
+        run: ./scripts/ci-build-pkg.sh harvester
+
+      - id: upload-gate
+        name: Upload Gate
+        run: ./scripts/build-upload-gate
+
+      # - id: install-aws-cli
+      #   name: Install AWS CLI
+      #   run: |
+      #     sudo apt-get update && sudo apt-get install -y unzip
+      #     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      #     unzip awscliv2.zip
+      #     sudo ./aws/install
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ap-southeast-2
+
+      - name: Upload plugin tar
+        run: |
+          aws s3 cp dist-pkg/${{steps.ci-build-pkg.outputs.PKG_TARBALL}} s3://cn-harvester-ui/plugin/ --acl public-read
+
+      - name: Upload plugin directory
+        run: |
+          aws s3 sync dist-pkg/${{steps.ci-build-pkg.outputs.PKG_NAME}} s3://cn-harvester-ui/plugin/${{steps.ci-build-pkg.outputs.PKG_NAME}} --delete --acl public-read
+
