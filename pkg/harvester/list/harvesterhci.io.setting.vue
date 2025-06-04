@@ -10,6 +10,8 @@ import Tab from '@shell/components/Tabbed/Tab.vue';
 import Settings from '@pkg/harvester/components/SettingList.vue';
 import { HCI_ALLOWED_SETTINGS, HCI_SINGLE_CLUSTER_ALLOWED_SETTING } from '../config/settings';
 import { HCI } from '../types';
+import LocaleSelector from '@shell/components/LocaleSelector';
+
 
 export default {
   components: {
@@ -18,6 +20,7 @@ export default {
     Tabbed,
     Tab,
     Settings,
+    LocaleSelector
   },
 
   async fetch() {
@@ -167,6 +170,15 @@ export default {
           :settings="settings"
           category="ui"
         />
+        <div class="language-setting">
+          <h1
+            v-t="'prefs.language'"
+          />
+          <LocaleSelector
+            data-testid="prefs__languageSelector"
+            aria-labelledby="prefs-language"
+          />
+        </div>
       </Tab>
     </Tabbed>
   </div>
@@ -175,5 +187,15 @@ export default {
 <style lang='scss' scoped>
 .settings-banner {
   margin-top: 0;
+}
+
+.language-setting {
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: var(--border-radius);
+
+  h1 {
+    font-size: 14px;
+  }
 }
 </style>
