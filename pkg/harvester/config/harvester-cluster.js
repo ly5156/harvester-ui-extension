@@ -712,6 +712,7 @@ export function init($plugin, store) {
 
   virtualType({
     label:      'PCI Devices',
+    labelKey:   'harvester.pci.label',
     group:      'advanced',
     weight:     14,
     name:       HCI.PCI_DEVICE,

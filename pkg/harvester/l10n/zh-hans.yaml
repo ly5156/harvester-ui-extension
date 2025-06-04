@@ -325,6 +325,7 @@ harvester:
       suffix: 以启用插件，成功管理 PCI 设备。
     noPCIPermission: 请联系系统管理员，首先启用 PCI 设备。
     enablePassthroughWarning: 请勿分配宿主机专属PCI设备（如管理网卡、VLAN网卡）。错误分配可能导致集群损坏（含节点不可恢复故障）。
+    label: PCI 设备
 
   devices:
     matrixHostName: 主机名称
@@ -816,7 +817,7 @@ harvester:
       disableResize: 'Longhorn V2 卷无法调整大小。'
 
   image:
-    label: Images
+    label: 镜像
     tabs:
       basics: 基本信息
     url: URL

@@ -325,6 +325,7 @@ harvester:
       suffix: to enable the add-on to successfully manage your PCI devices.
     noPCIPermission: Please contact your system administrator to enable the PCI devices first.
     enablePassthroughWarning: Please be careful not to use host-owned PCI devices (e.g., management and VLAN NICs). Incorrect device allocation may cause damage to your cluster, including node failure.
+    label: PCI Devices
 
   devices:
     matrixHostName: Host Name
