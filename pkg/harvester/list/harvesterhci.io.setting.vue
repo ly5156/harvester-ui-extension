@@ -12,7 +12,6 @@ import { HCI_ALLOWED_SETTINGS, HCI_SINGLE_CLUSTER_ALLOWED_SETTING } from '../con
 import { HCI } from '../types';
 import LocaleSelector from '@shell/components/LocaleSelector';
 
-
 export default {
   components: {
     Banner,
