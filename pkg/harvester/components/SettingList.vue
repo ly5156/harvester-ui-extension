@@ -148,7 +148,7 @@ export default {
               Experimental
             </span>
           </h1>
-          <h2 v-clean-html="t(setting.description, {}, true)">
+          <h2 v-clean-html="t(setting.description)">
           </h2>
         </div>
         <div
