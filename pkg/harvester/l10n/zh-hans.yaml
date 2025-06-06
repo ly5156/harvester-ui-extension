@@ -1545,35 +1545,35 @@ typeDescription:
 advancedSettings:
   experimental: '实验性功能允许用户在官方支持版本发布前测试并评估早期访问功能'
   descriptions:
-    'harv-vlan': VLAN 网络的默认网络接口名称。
-    'harv-backup-target': 用于存储虚拟机备份的自定义备份目标。
-    'branding': 品牌化配置允许管理员通过自定义 Harvester 产品名称，logo，配色方案，全局统一调整用户界面（UI）品牌形象。
-    'harv-csi-driver-config': ‌为 CSI 驱动配置附加信息‌。
-    'harv-containerd-registry': Containerd Registry Configuration to connect private registries.
-    'harv-log-level': 配置 Harvester 服务器日志级别。默认为 Info。
-    'harv-server-version': Harvester 服务器版本。
-    'harv-upgrade-checker-enabled': ‌指定是否启用 Harvester 升级检查功能，默认值为 True‌。
-    'harv-upgrade-checker-url': ‌Harvester 升级检查默认 URL，仅在 <code>upgrade-checker-enabled</code> 设置为 True 时启用‌。
-    'harv-ui-source': 配置用户界面资源加载方式。
+    'harv-vlan': 'VLAN 网络的默认网络接口名称。'
+    'harv-backup-target': '用于存储虚拟机备份的自定义备份目标。'
+    'branding': '品牌化配置允许管理员通过自定义 Harvester 产品名称，logo，配色方案，全局统一调整用户界面（UI）品牌形象。'
+    'harv-csi-driver-config': '为 CSI 驱动配置附加信息‌。'
+    'harv-containerd-registry': 'Containerd Registry 配置用于连接私有 registries。'
+    'harv-log-level': '配置 Harvester 服务器日志级别。默认为 Info。'
+    'harv-server-version': 'Harvester 服务器版本。'
+    'harv-upgrade-checker-enabled': '指定是否启用 Harvester 升级检查功能，默认值为 True‌。'
+    'harv-upgrade-checker-url': 'Harvester 升级检查默认 URL，仅在 <code>upgrade-checker-enabled</code> 设置为 True 时启用‌。'
+    'harv-ui-source': '配置用户界面资源加载方式。'
     'harv-ui-index': 'UI 的 HTML index 地址。'
     'harv-ui-plugin-index': 'Harvester 插件 UI JS index 地址'
-    'harv-cluster-registration-url': 用于多群集管理的注册 URL。
+    'harv-cluster-registration-url': '用于多群集管理的注册 URL。'
     'harv-http-proxy': '供 Harvester 访问外部服务的 HTTP 代理。'
     'harv-additional-ca': '用于 TLS 验证的自定义 CA 根证书。'
     'harv-overcommit-config': '资源超配配置。'
     'harv-support-bundle-timeout': '支持 bundle 生成超时配置（分钟），设置为 0 可禁用超时机制‌。'
     'harv-support-bundle-expiration': '支持 bundle 有效期配置（分钟）。'
     'harv-support-bundle-node-collection-timeout': '支持 bundle 节点收集超时配置（分钟）。'
-    'harv-vm-force-reset-policy': ‌虚拟机在宕机节点上卡死时的强制重置操作配置‌。
-    'harv-ssl-parameters': 用于 TLS 验证的自定义 SSL 参数。
+    'harv-vm-force-reset-policy': '‌虚拟机在宕机节点上卡死时的强制重置操作配置‌。'
+    'harv-ssl-parameters': '用于 TLS 验证的自定义 SSL 参数。'
     'harv-storage-network': 'Longhorn 存储网络设置。'
-    'harv-support-bundle-namespaces': 指定支持软件包要收集的其他命名空间中的资源。
-    'harv-auto-disk-provision-paths': 配置 Harvester 自动添加为虚拟机存储的磁盘（glob 模式匹配）‌。
-    'harv-support-bundle-image': 支持包镜像配置及版本查询(基于<a href="https://hub.docker.com/r/rancher/support-bundle-kit/tags" target="_blank">rancher/support-bundle-kit</a>)。
-    'harv-release-download-url': T通过此配置项可定义 <code>升级版本下载</code> URL 地址。Harvester 将从配置的 URL 地址（<code>$URL</code>/<code>$VERSION</code>/version.yaml）所托管的文件中获取 ISO 文件链接及校验值‌。
-    'harv-default-vm-termination-grace-period-seconds': 配置虚拟机停止时的终止宽限期。
-    'harv-ntp-servers': 配置 NTP 服务器。可以配置多个 IPv4 地址或主机地址。
-    'harv-auto-rotate-rke2-certs': 证书轮换机制依赖 Rancher 实现。Harvester 将通过自动更新证书生成版本触发轮换流程‌。
+    'harv-support-bundle-namespaces': '指定支持软件包要收集的其他命名空间中的资源。'
+    'harv-auto-disk-provision-paths': '配置 Harvester 自动添加为虚拟机存储的磁盘（glob 模式匹配）‌。'
+    'harv-support-bundle-image': '支持包镜像配置及版本查询(基于<a href="https://hub.docker.com/r/rancher/support-bundle-kit/tags" target="_blank">rancher/support-bundle-kit</a>)。'
+    'harv-release-download-url': '通过此配置项可定义 <code>升级版本下载</code> URL 地址。Harvester 将从配置的 URL 地址（<code>$URL</code>/<code>$VERSION</code>/version.yaml）所托管的文件中获取 ISO 文件链接及校验值‌。'
+    'harv-default-vm-termination-grace-period-seconds': '配置虚拟机停止时的终止宽限期。'
+    'harv-ntp-servers': '配置 NTP 服务器。可以配置多个 IPv4 地址或主机地址。'
+    'harv-auto-rotate-rke2-certs': '证书轮换机制依赖 Rancher 实现。Harvester 将通过自动更新证书生成版本触发轮换流程‌。'
     'harv-kubeconfig-default-token-ttl-minutes': '配置 Harvester 管理用 kubeconfig 文件的令牌有效期（TTL，单位：分钟）。默认值为 0，表示永不过期‌。'
     'harv-longhorn-v2-data-engine-enabled': '启用 Longhorn V2 数据引擎。默认值为 false（禁用）。 <ul><li>修改此配置将触发所有节点上的 RKE2 重启，但运行中的虚拟机负载不受影响。</li><li>若启用时出现 "not enough hugepages-2Mi capacity" 错误，请等待 1 分钟以清除错误。 若错误持续，需重启受影响的节点‌。</li></ul>'
     'harv-additional-guest-memory-overhead-ratio': '配置 KubeVirt 虚拟机内存开销的调节系数。允许值为零、空值或 1.0 到 10.0 之间的浮点数，默认值为 1.5‌。'
